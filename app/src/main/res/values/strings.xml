@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Selamat Datang</string>
+    <string name="selamat_datang_user">Selamat Datang, User!</string>
+    <string name="HalamanLogin">Login Rakha</string>
+    <string name="login">Login</string>
+    <string name="login_register">Login</string>
+</resources>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <!-- Main Content -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#121212">
+
+        <!-- Toolbar -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#32CD32"
+            android:title="Beranda"
+            android:titleTextColor="@android:color/white"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Tombol Sidebar -->
+        <ImageButton
+            android:id="@+id/menu_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_menu"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:visibility="gone"
+            app:tint="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp" />
+
+        <!-- Text Selamat Datang -->
+        <TextView
+            android:id="@+id/selamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selamat datang, User!"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/logout_button"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <!-- Access Token -->
+        <TextView
+            android:id="@+id/aksesToken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Access Token: "
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/selamat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"/>
+
+        <!-- Refresh Token -->
+        <TextView
+            android:id="@+id/refreshToken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refresh Token: "
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/aksesToken"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"/>
+
+        <!-- Tombol Logout -->
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#32CD32"
+            app:layout_constraintTop_toBottomOf="@id/refreshToken"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Sidebar -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:visibility="gone"
+        android:background="#1F1F1F"
+        app:itemTextColor="@android:color/white"
+        app:itemIconTint="@android:color/white"
+        app:menu="@menu/drawer_menu"/>
+</androidx.drawerlayout.widget.DrawerLayout>
